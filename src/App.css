@@ -1,15 +1,6 @@
-/* Reset default styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Main container with background image */
+/* Apply zoom-in effect */
 .landing-container {
   position: relative;
-  width: 100vw;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,10 +8,17 @@
   color: white;
   font-family: Arial, sans-serif;
   padding: 20px;
-  
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
-/* Overlay to darken the background */
+.landing-container.zoom-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Dark overlay */
 .overlay {
   position: absolute;
   top: 0;
@@ -30,7 +28,7 @@
   background: rgba(0, 0, 0, 0.5);
 }
 
-/* Content container */
+/* Content */
 .content {
   position: relative;
   z-index: 2;
@@ -39,13 +37,12 @@
   width: 90%;
 }
 
-/* Title */
 h1 {
   font-size: 3rem;
 }
 
-/* Address & Phone */
-.address, .phone {
+.address,
+.phone {
   font-size: 1.2rem;
   margin-top: 10px;
 }
@@ -57,15 +54,9 @@ h1 {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   display: inline-block;
-  transition: transform 1s ease-in-out;
 }
 
-/* Zoom-in effect */
-.zoom-in {
-  transform: scale(1.1);
-}
-
-/* Button for visiting the main website */
+/* Visit button */
 .visit-button {
   display: inline-block;
   margin-top: 20px;

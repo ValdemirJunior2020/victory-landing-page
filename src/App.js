@@ -5,12 +5,12 @@ function App() {
   const [zoomIn, setZoomIn] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setZoomIn(true), 500);
+    setTimeout(() => setZoomIn(true), 500); // Add delay for zoom effect
   }, []);
 
   return (
     <div
-      className="landing-container"
+      className={`landing-container ${zoomIn ? "zoom-in" : ""}`}
       style={{
         backgroundImage: `url(${process.env.PUBLIC_URL + "/church-bg.jpg"})`,
         backgroundSize: "cover",
@@ -26,7 +26,7 @@ function App() {
         <p className="address">1915 N A St, Lake Worth Beach, FL 33460</p>
         <p className="phone">Phone: (561) 585-0130</p>
 
-        <div className={`hours ${zoomIn ? "zoom-in" : ""}`}>
+        <div className="hours">
           <h2>Hours</h2>
           <p><strong>Tuesday:</strong> 7 PM – 12 AM</p>
           <p><strong>Wednesday:</strong> Closed</p>
