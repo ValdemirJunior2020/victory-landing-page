@@ -5,11 +5,21 @@ function App() {
   const [zoomIn, setZoomIn] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setZoomIn(true), 500); // Zoom effect
+    setTimeout(() => setZoomIn(true), 500);
   }, []);
 
   return (
-    <div className="landing-container">
+    <div
+      className="landing-container"
+      style={{
+        backgroundImage: `url(${process.env.PUBLIC_URL + "/church-bg.jpg"})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        width: "100vw",
+        height: "100vh",
+      }}
+    >
       <div className="overlay"></div>
       <div className="content">
         <h1>Victory Worship Center</h1>
@@ -35,4 +45,4 @@ function App() {
   );
 }
 
-export default App; // ✅ Default export added
+export default App;
